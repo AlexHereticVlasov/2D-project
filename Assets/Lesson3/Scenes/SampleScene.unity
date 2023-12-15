@@ -1126,7 +1126,7 @@ MonoBehaviour:
   _topSpawnPosition: {fileID: 1355657095}
   _minRate: 2
   _maxRate: 4
-  _currentRate: 5
+  _currentRate: 0
 --- !u!1 &1637402536
 GameObject:
   m_ObjectHideFlags: 0
