@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private int _health = 5;
+    [SerializeField] public int _health = 5;
 
     public event UnityAction<Enemy> Death;
 
@@ -17,15 +18,18 @@ public class Enemy : MonoBehaviour
     {
         _health -= damage;
         if (_health <= 0)
-        {
             Die();
-        }
     }
-
 
     private void Die()
     {
         Death?.Invoke(this);
         Destroy(gameObject);
+    }
+
+    public void Init(EnemyData data)
+    {
+        _health = data.Healt;
+        _speed = data.Speed;
     }
 }
