@@ -3,18 +3,13 @@ using UnityEngine.Events;
 
 public class EnemyFabric : MonoBehaviour
 {
-    [SerializeField] private Enemy _groundEnemyTemplate;
-    [SerializeField] private Enemy _flyingEnemyTemplate;
-
+    [SerializeField] private BaseEnemy _groundEnemyTemplate;
     [SerializeField] private Transform _spawnPosition;
-    [SerializeField] private Transform _topSpawnPosition;
-
-
     [SerializeField] private EnemyData[] _enemyDatas;
 
     private Timer _timer;
 
-    public event UnityAction<Enemy> EnemySpawned;
+    public event UnityAction<BaseEnemy> EnemySpawned;
 
     private void Awake() => _timer = new Timer(2, 5);
 
@@ -26,15 +21,11 @@ public class EnemyFabric : MonoBehaviour
 
     private void OnTimeIsOver()
     {
-        var enemy = Instantiate(_groundEnemyTemplate, _spawnPosition.position, Quaternion.identity);
+        BaseEnemy enemy = Instantiate(_groundEnemyTemplate, _spawnPosition.position, Quaternion.identity);
         EnemySpawned?.Invoke(enemy);
 
         enemy.Init(_enemyDatas[Random.Range(0, _enemyDatas.Length)]);
-
-        var flyingEnemy = Instantiate(_flyingEnemyTemplate, _spawnPosition.position, Quaternion.identity);
-        EnemySpawned?.Invoke(flyingEnemy);
-
-        flyingEnemy.Init(_enemyDatas[Random.Range(0, _enemyDatas.Length)]);
+        enemy.Say("Abrahadabra");
     }
 }
 

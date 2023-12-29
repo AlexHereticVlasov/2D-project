@@ -17,7 +17,11 @@ public sealed class Bullet : MonoBehaviour
 
         foreach (var collider in colliders)
         {
-            if (collider.transform.TryGetComponent(out Enemy enemy))
+            //var enemy = collider.GetComponent<BaseEnemy>();
+            //var enemy1 = collider.GetComponent<FlyingEnemy>();
+            //var circle = collider.GetComponent<CircleCollider2D>();
+
+            if (collider.transform.TryGetComponent(out BaseEnemy enemy))
             {
                 enemy.TakeDamage(5);
             }

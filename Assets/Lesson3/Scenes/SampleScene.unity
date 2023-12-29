@@ -276,6 +276,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1529298146}
+  - {fileID: 691431274}
+  - {fileID: 1133667973}
+  - {fileID: 1355657095}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -307,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyFabrics:
   - {fileID: 1529298147}
+  - {fileID: 691431273}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +475,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &691431272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691431274}
+  - component: {fileID: 691431273}
+  m_Layer: 0
+  m_Name: Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &691431273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691431272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aa106d588e6534995803e8db2d6b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundEnemyTemplate: {fileID: 8813030485474473346, guid: 95f17392f5a00b6468cdb1f04cdd95a6, type: 3}
+  _spawnPosition: {fileID: 1355657095}
+  _enemyDatas:
+  - {fileID: 11400000, guid: bee3bf46a3aaf7747a7478afcbc677bc, type: 2}
+  - {fileID: 11400000, guid: fb8c6f914c176574b9c9e6b2923e756f, type: 2}
+--- !u!4 &691431274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691431272}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 515835395}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786813673
 GameObject:
@@ -801,12 +853,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133667972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.25, y: 1.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1529298146}
-  m_RootOrder: 0
+  m_Father: {fileID: 515835395}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253253173
 GameObject:
@@ -1177,12 +1229,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355657094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.25, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1529298146}
-  m_RootOrder: 1
+  m_Father: {fileID: 515835395}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529298145
 GameObject:
@@ -1211,9 +1263,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1133667973}
-  - {fileID: 1355657095}
+  m_Children: []
   m_Father: {fileID: 515835395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1229,13 +1279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aa106d588e6534995803e8db2d6b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundEnemyTemplate: {fileID: 5717664817907244094, guid: 7255d42253c6a034da6f76b6bae2c64d, type: 3}
-  _flyingEnemyTemplate: {fileID: 3843753539542989800, guid: 95f17392f5a00b6468cdb1f04cdd95a6, type: 3}
+  _groundEnemyTemplate: {fileID: 5892175106549329755, guid: 7255d42253c6a034da6f76b6bae2c64d, type: 3}
   _spawnPosition: {fileID: 1133667973}
-  _topSpawnPosition: {fileID: 1355657095}
-  _minRate: 2
-  _maxRate: 4
-  _currentRate: 0
   _enemyDatas:
   - {fileID: 11400000, guid: bee3bf46a3aaf7747a7478afcbc677bc, type: 2}
   - {fileID: 11400000, guid: fb8c6f914c176574b9c9e6b2923e756f, type: 2}

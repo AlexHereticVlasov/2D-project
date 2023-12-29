@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5717664817907244224}
   - component: {fileID: 5717664817907244225}
   - component: {fileID: 5717664817907244095}
-  - component: {fileID: 5717664817907244094}
   - component: {fileID: 1189733399988633531}
+  - component: {fileID: 5892175106549329755}
   m_Layer: 6
   m_Name: GroundEnemy
   m_TagString: Untagged
@@ -111,20 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5717664817907244094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5717664817907244226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f156bc9a14b7148bc66afe6ad77814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 1.5
-  _health: 5
 --- !u!50 &1189733399988633531
 Rigidbody2D:
   serializedVersion: 4
@@ -146,3 +132,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5892175106549329755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717664817907244226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29afa07e86099746b98883a099776df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0
+  _health: 5

@@ -25,12 +25,12 @@ public class Score : MonoBehaviour
         }
     }
 
-    private void OnEnemySpawned(Enemy enemy)
+    private void OnEnemySpawned(BaseEnemy enemy)
     {
         enemy.Death += OnDeath;
     }
 
-    private void OnDeath(Enemy enemy)
+    private void OnDeath(BaseEnemy enemy)
     {
         enemy.Death -= OnDeath;
 

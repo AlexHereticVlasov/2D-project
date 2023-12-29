@@ -2,17 +2,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] public int _health = 5;
 
-    public event UnityAction<Enemy> Death;
+    public event UnityAction<BaseEnemy> Death;
 
-    private void Update()
-    {
-        transform.Translate(Vector3.left * _speed * Time.deltaTime);
-    }
+    private void Update() => transform.Translate(Vector3.left * _speed * Time.deltaTime);
 
     public void TakeDamage(int damage)
     {
@@ -20,6 +17,10 @@ public class Enemy : MonoBehaviour
         if (_health <= 0)
             Die();
     }
+
+    public void TakeDamage() => TakeDamage(50);
+
+    public abstract void Say(string sentense);
 
     private void Die()
     {
@@ -33,3 +34,4 @@ public class Enemy : MonoBehaviour
         _speed = data.Speed;
     }
 }
+

@@ -6,7 +6,7 @@ public class DeadZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.TryGetComponent(out Enemy enemy))
+        if (collision.transform.TryGetComponent(out BaseEnemy enemy))
         {
             Destroy(enemy.gameObject);
             //SendMessage
